@@ -1,0 +1,2879 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sujets d'Examen — Géographie L1 | Université d'Antananarivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --glass: rgba(255,255,255,0.07);
+    --glass-border: rgba(255,255,255,0.18);
+    --glass-hover: rgba(255,255,255,0.13);
+    --blur: blur(22px);
+    --shadow: 0 8px 40px rgba(0,0,0,0.35);
+    --accent1: #7ee8fa;
+    --accent2: #a78bfa;
+    --accent3: #f472b6;
+    --accent4: #34d399;
+    --accent5: #fbbf24;
+    --accent6: #fb923c;
+    --text: #f0f4ff;
+    --text-muted: rgba(240,244,255,0.6);
+    --gold: #ffd700;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #050b1a;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Animated cosmic background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(126,232,250,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(167,139,250,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 10%, rgba(244,114,182,0.10) 0%, transparent 40%),
+      radial-gradient(ellipse at 10% 80%, rgba(52,211,153,0.08) 0%, transparent 40%);
+    z-index: 0;
+    animation: bgPulse 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgPulse {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* Stars */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 25% 85%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(2px 2px at 90% 10%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 55% 90%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.3), transparent);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    text-align: center;
+    padding: 70px 20px 50px;
+    position: relative;
+  }
+
+  .header-badge {
+    display: inline-block;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--blur);
+    padding: 6px 20px;
+    border-radius: 50px;
+    color: var(--accent1);
+    margin-bottom: 24px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 0%, var(--accent1) 40%, var(--accent2) 70%, var(--accent3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    animation: fadeDown 0.9s 0.1s ease both;
+  }
+
+  .site-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    animation: fadeDown 1s 0.2s ease both;
+  }
+
+  .header-line {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent1), var(--accent2), transparent);
+    margin: 30px auto 0;
+    animation: fadeDown 1s 0.3s ease both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== NAV / TOC ===== */
+  .toc-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 40px 0 60px;
+  }
+
+  .toc-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--blur);
+    border-radius: 50px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .toc-btn:hover {
+    background: var(--glass-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .toc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTION (Matière) ===== */
+  .matiere-section {
+    margin-bottom: 60px;
+  }
+
+  .matiere-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 28px 36px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--blur);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .matiere-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-color, var(--accent1)) 0%, transparent 60%);
+    opacity: 0.07;
+  }
+
+  .matiere-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent-color, var(--accent1));
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 60px;
+  }
+
+  .matiere-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .matiere-info p {
+    font-size: 0.82rem;
+    color: var(--accent-color, var(--accent1));
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Fira Mono', monospace;
+  }
+
+  .matiere-divider {
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--accent-color, var(--accent1)), transparent);
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ===== SUJET CARD ===== */
+  .sujet-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--blur);
+    border-radius: 16px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+
+  .sujet-card:hover {
+    background: var(--glass-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+  }
+
+  .sujet-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+
+  .sujet-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sujet-tag.normale {
+    background: rgba(52,211,153,0.15);
+    color: var(--accent4);
+    border: 1px solid rgba(52,211,153,0.3);
+  }
+
+  .sujet-tag.rattrapage {
+    background: rgba(251,146,60,0.15);
+    color: var(--accent6);
+    border: 1px solid rgba(251,146,60,0.3);
+  }
+
+  .sujet-tag.repechage {
+    background: rgba(244,114,182,0.15);
+    color: var(--accent3);
+    border: 1px solid rgba(244,114,182,0.3);
+  }
+
+  .sujet-tag.pratique {
+    background: rgba(167,139,250,0.15);
+    color: var(--accent2);
+    border: 1px solid rgba(167,139,250,0.3);
+  }
+
+  .sujet-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .sujet-meta {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .expand-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+  }
+
+  .sujet-card.open .expand-icon {
+    transform: rotate(180deg);
+  }
+
+  .sujet-body {
+    display: none;
+    padding: 0 24px 22px;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .sujet-card.open .sujet-body {
+    display: block;
+  }
+
+  /* Content styling */
+  .question-block {
+    margin: 16px 0;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--accent-color, var(--accent1));
+    border-radius: 0 10px 10px 0;
+  }
+
+  .question-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color, var(--accent1));
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .question-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-color, var(--accent1));
+    flex-shrink: 0;
+  }
+
+  .question-content {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(240,244,255,0.85);
+  }
+
+  .sub-item {
+    display: flex;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .sub-item:last-child { border-bottom: none; }
+
+  .sub-num {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-color, var(--accent1));
+    opacity: 0.7;
+    flex-shrink: 0;
+    min-width: 22px;
+    padding-top: 1px;
+  }
+
+  .sub-text {
+    font-size: 0.87rem;
+    line-height: 1.65;
+    color: rgba(240,244,255,0.82);
+  }
+
+  .note-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: rgba(255,215,0,0.12);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 50px;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--gold);
+    margin-left: 8px;
+  }
+
+  .duree-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(126,232,250,0.08);
+    border: 1px solid rgba(126,232,250,0.2);
+    border-radius: 50px;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent1);
+    margin: 12px 0 8px;
+  }
+
+  .instruction-block {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 8px 0 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 10px;
+  }
+
+  /* ===== INDEX / CODES ===== */
+  .index-section {
+    margin-top: 80px;
+    padding: 50px 40px;
+    background: var(--glass);
+    border: 1px solid rgba(255,215,0,0.3);
+    backdrop-filter: var(--blur);
+    border-radius: 24px;
+    box-shadow: 0 0 60px rgba(255,215,0,0.06), var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .index-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 0%, rgba(255,215,0,0.03) 25%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes rotate {
+    to { transform: rotate(360deg); }
+  }
+
+  .index-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .index-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .codes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .code-card {
+    padding: 28px;
+    background: rgba(255,215,0,0.05);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .code-card:hover {
+    background: rgba(255,215,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(255,215,0,0.1);
+  }
+
+  .code-label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Fira Mono', monospace;
+    margin-bottom: 14px;
+    opacity: 0.7;
+  }
+
+  .code-contact {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .code-display {
+    font-family: 'Fira Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 8px;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(255,215,0,0.4);
+    padding: 14px 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255,215,0,0.15);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .code-display:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px rgba(255,215,0,0.3);
+  }
+
+  .copy-hint {
+    font-size: 0.68rem;
+    color: rgba(255,215,0,0.5);
+    margin-top: 10px;
+    font-family: 'Fira Mono', monospace;
+  }
+
+  .copied-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    background: rgba(52,211,153,0.9);
+    border-radius: 50px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.85rem;
+    z-index: 999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .copied-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .codes-list-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin: 30px 0 16px;
+    text-align: center;
+  }
+
+  .codes-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .code-pill {
+    font-family: 'Fira Mono', monospace;
+    padding: 6px 18px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .code-pill:hover {
+    background: rgba(255,215,0,0.18);
+    transform: scale(1.05);
+  }
+
+  /* ===== EXPAND ALL btn ===== */
+  .expand-all-btn {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 12px 30px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--blur);
+    border-radius: 50px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .expand-all-btn:hover {
+    background: var(--glass-hover);
+    transform: translateY(-2px);
+  }
+
+  /* ===== PROGRESS BAR ===== */
+  .scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+    z-index: 100;
+    transition: width 0.1s;
+  }
+
+  /* Scroll anchor offset */
+  .anchor-target {
+    scroll-margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    .matiere-header { flex-direction: column; align-items: flex-start; padding: 20px; }
+    .sujet-card-header { flex-wrap: wrap; }
+    .sujet-meta { display: none; }
+    .index-section { padding: 30px 20px; }
+    .code-display { font-size: 1.6rem; letter-spacing: 5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="copied-toast" id="toast">✓ Copié !</div>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-badge">🎓 Université d'Antananarivo — Mention Géographie</div>
+    <h1 class="site-title">Sujets d'Examen<br>Géographie L1</h1>
+    <p class="site-subtitle">Recueil complet des épreuves — Toutes sessions confondues</p>
+    <div class="header-line"></div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="toc-nav">
+    <a href="#part1" class="toc-btn"><span class="toc-dot" style="background:#7ee8fa"></span>Partie 1 · Lithosphère</a>
+    <a href="#part2" class="toc-btn"><span class="toc-dot" style="background:#34d399"></span>Partie 2 · Hydrosphère</a>
+    <a href="#part3" class="toc-btn"><span class="toc-dot" style="background:#f472b6"></span>Partie 3 · Atmosphère</a>
+    <a href="#part4" class="toc-btn"><span class="toc-dot" style="background:#fbbf24"></span>Partie 4 · Environnement</a>
+    <a href="#part5" class="toc-btn"><span class="toc-dot" style="background:#a78bfa"></span>Partie 5 · Population & Société</a>
+    <a href="#part6" class="toc-btn"><span class="toc-dot" style="background:#fb923c"></span>Partie 6 · Géographie de Madagascar</a>
+    <a href="#index" class="toc-btn" style="border-color:rgba(255,215,0,0.4)"><span class="toc-dot" style="background:#ffd700"></span>Index & Codes</a>
+  </nav>
+
+  <button class="expand-all-btn" onclick="toggleAll()">📂 Tout ouvrir / Fermer</button>
+
+  <!-- =========================================================
+       PARTIE 1 : LITHOSPHÈRE
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part1" style="--accent-color: #7ee8fa">
+    <div class="matiere-header">
+      <div class="matiere-num">01</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Lithosphère</h2>
+        <p>Géomorphologie &amp; Géologie Structurale</p>
+      </div>
+    </div>
+
+    <!-- S1 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 1 — Grands ensembles du relief continental</span>
+        <span class="sujet-meta">2h · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h &nbsp;|&nbsp; Coefficient : 2</div>
+        <div class="instruction-block">DEUX QUESTIONS OBLIGATOIRES</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">
+            Schématisez et donnez les caractéristiques qui définissent les grands ensembles du relief en milieu continental (plaine, plateau, montagne, bassin). Précisez pour chacun : la genèse (structurale ou morphologique), les processus d'érosion dominants et les formes caractéristiques associées.
+          </div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Définissez les termes suivants et schématisez ceux qui le nécessitent :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Gravimétrie</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Courants de convection mantellique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Facteurs d'élaboration d'un relief continental</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Phénomène de capture fluviale</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Tectonique des plaques</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Schématisez une faille verticale conforme et une faille normale contraire</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Schématisez un escarpement double</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Cas d'inadaptation structurale</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S2 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag rattrapage">Session Rattrapage</span>
+        <span class="sujet-title">Sujet 2 — Définitions & Commentaire de profil géologique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="instruction-block">DEUX QUESTIONS OBLIGATOIRES</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Donnez la définition des termes suivants :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Zone de subduction</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Rivière cataclinale</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Rapport entre système hydrographique et structure géologique (qu'est-ce qu'un cas d'adaptation ?)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Les trois grands ensembles de relief trouvés sur les continents</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Graben</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">
+            Faites le commentaire du profil géologique ci-joint sur les plans topographique, structural et morphologique. Le profil montre une alternance de calcaires compacts et d'argiles, avec des structures en cuesta et des vallées encaissées.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S3 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 3 — Commentaire de profil & Schémas structuraux</span>
+        <span class="sujet-meta">2h · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 2</div>
+        <div class="instruction-block">DEUX QUESTIONS OBLIGATOIRES</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">
+            Plan détaillé d'un commentaire d'un profil complet en relief continental. Décrivez les étapes méthodologiques pour réaliser un commentaire structuré (analyse topographique, lithologique, structurale, morphologique et interprétation géodynamique).
+          </div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Définissez et schématisez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Relief de cuesta (avec front et revers)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Phénomène de surimposition</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Géomorphologie structurale vs dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Tectonique compressive vs extensive</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Terme morphologique pour indiquer un plateau en relief de cuesta (table)</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Faille inverse vs normale</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Plan stratigraphique supérieur</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Zone de subduction (avec schéma)</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Synéclise et antéclise</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Surface de contact (définition et schéma)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S4 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 4 — Définitions fondamentales & Commentaire monoclinale</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Géomorphologie</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Biotope (ou Blatope)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Isostasie (ou Isortasie)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Plateau</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Plan stratigraphique</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Plan de faille</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Schématisez une faille verticale conforme et une faille normale conforme</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Formes dérivées d'une structure tabulaire</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Roches sédimentaires (genèse et types)</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Phénomène de capture</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">
+            Commentaire de profil : Analysez le profil géologique fourni montrant une structure monoclinale avec calcaires du Cénomanien surmontant des marnes du Turonien, présentant des formes de cuesta et des vallées sèches.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S5 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 5 — Convergence des plaques & Définitions</span>
+        <span class="sujet-meta">1h30 · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 1h30 · Coefficient : 2</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Les mouvements de convergence des plaques :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Appellations (subduction océan/océan, océan/continent, collision continent/continent)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Manifestations (sismicité, volcanisme, formation de chaînes)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Conséquences avec schémas détaillés</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Pent</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Phénomène de capture</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Stratigraphie</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Pentage</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Schématisez un escarpement de ligne de faille fossilisé</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Schématisez une faille normale contraire et une faille verticale conforme</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Roches sédimentaires (classification)</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Échelle de résistance des roches avec alternance dur/tendre</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S6 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 6 — Profils topographique & géologique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Étapes à suivre pour réaliser :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Un profil topographique (5 points)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Un profil géologique (5 points)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Phénomène de surimposition</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Tectonique</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Terme morphologique pour un plateau en relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Faille (normale, inverse, verticale)</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Plan stratigraphique supérieur</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Zone de subduction</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Synéclise</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Surface de contact (définition et schéma)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S7 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag rattrapage">Session Rattrapage</span>
+        <span class="sujet-title">Sujet 7 — Définitions & Commentaire de profil</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Géomorphologie</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Biotope</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Isostasie</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Plateau</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Plan stratigraphique</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Plan de faille</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Schématisez une faille verticale conforme et une faille normale conforme</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Formes dérivées d'une structure tabulaire</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Roches sédimentaires</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Phénomène de capture</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Commentaire de profil géologique sur plans topographique, structural et morphologique.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S8 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 8 — Facteurs du relief & Schémas structuraux</span>
+        <span class="sujet-meta">1h30 · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 1h30 · Coefficient : 2</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Schématisez et décrivez les facteurs d'élaboration du relief en milieu terrestre. Distribuez-les en facteurs endogènes (tectonique, volcanisme, métamorphisme) et exogènes (érosion, sédimentation, climat).</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Définissez et schématisez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Relief</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Flexure</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Phénomène d'antécédence</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Géomorphologie structurale</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Lithologie</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Relief de coteau</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Schématisez un escarpement de ligne de faille fossilisé</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Schématisez une faille inverse conforme et une faille verticale contraire</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Roches éruptives</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Surface de contact</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S9 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 9 — Définitions & Commentaire de profil</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Pent</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Phénomène de capture</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Stratigraphie</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Pentage</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Schématisez un escarpement de ligne de faille fossilisé</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Schématisez une faille normale contraire et une faille verticale conforme</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Roches sédimentaires</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Échelle de résistance des roches</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Commentaire de profil sur plans topographique, structural et morphologique.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S10 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 10 — Tectonique des plaques (théorie unificatrice)</span>
+        <span class="sujet-meta">2h · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 2</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Analysez la tectonique des plaques comme théorie unificatrice. Décrivez : les types de frontières (divergentes, convergentes, transformantes), les cellules de convection mantellique, et les conséquences sur la distribution des reliefs terrestres.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /20</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Roches métamorphiques</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Lithologie</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Phénomène de surimposition</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Tectonique</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Plan stratigraphique supérieur</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Zone de subduction (avec schéma détaillé)</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Synéclise</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Surface de contact (définition et schéma)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet combiné Litho/Hydro 2016-17 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet Combiné — Lithosphère & Hydrosphère (2016-2017)</span>
+        <span class="sujet-meta">2h30</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ ALSH — Mention Géographie — Année universitaire 2016-2017 — Examen de repêchage L1S1</div>
+        <div class="question-block">
+          <div class="question-title">LITHOSPHÈRE <span class="note-badge">Coeff. 2 · 1h30</span></div>
+          <div class="question-content">Première question : Définissez les mots suivants :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Relief</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Biotope</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Isostasie</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Plateau</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Surface de contact</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Éléments d'une faille</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">LITHOSPHÈRE — Session Normale (2019-2020) <span class="note-badge">2h</span></div>
+          <div class="question-content">Première question (10 pts) :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Étapes à suivre pour réaliser un profil topographique (5 points)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Étapes à suivre pour réaliser un profil géologique (5 points)</span></div>
+          <div class="question-content" style="margin-top:10px">Deuxième question (10 pts) : Donnez la définition des mots suivants :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Phénomène de surimposition</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Géomorphologie dynamique</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Tectonique</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Terme morphologique pour indiquer un plateau en relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Faille</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Plan stratigraphique supérieur</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Zone de subduction</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Synclise</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Définition et schéma d'une surface de contact</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet L1 — Session normale (2015-2016)</div>
+          <div class="question-content">LITHOSPHÈRE (Coeff. 2 – 1h30) — Première question : Schématisez et donnez les caractéristiques qui définissent les grands ensembles du relief en milieu continental. Deuxième question : Définissez les mots suivants :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Géomorphologie</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Gravimétrie</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Courants de convection</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Facteurs d'élaboration d'un relief continental</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Phénomène de capture</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Tectonique</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Relief de cuesta</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Schématisez une faille verticale conforme et faille normale contraire</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Schématisez un escarpement double</span></div>
+          <div class="sub-item"><span class="sub-num">10.</span><span class="sub-text">Cas d'inadaptation</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet ED -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag pratique">Enseignement Dirigé</span>
+        <span class="sujet-title">Sujet ED — Lithosphère / Hydrosphère / Atmosphère (Choix)</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="instruction-block">Deuxième sujet : ED — CHOIX entre deux questions (note sur 10)</div>
+        <div class="question-block">
+          <div class="question-title">Première Question — Lithosphère & Hydrosphère</div>
+          <div class="question-content">Faites le commentaire du PROFIL ci-après sur les plans topographique, structural et morphologique. [Profil géologique avec échelles 1/20000 et 1/50000]</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question — Atmosphère</div>
+          <div class="question-content">Particule d'air A : pression 850 hPa, température 11,5°C, vapeur d'eau = 4 g/kg d'air sec.</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Quelle est la capacité maximale de cette particule d'air, rw ?</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Calculer l'humidité relative, U</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Quelle est la valeur de la température potentielle ? θ'w</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Calculer son point de condensation (pression, altitude et température)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Quelle est la température potentielle pseudo-adiabatique du thermomètre mouillé ? θ'w</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Quelle est la température pseudo-adiabatique du thermomètre mouillé, Tw ?</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Quelle est la température du point de rosée, Td ?</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Quelle est sa température à 785 hPa ? et à 670 hPa ?</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PARTIE 2 : HYDROSPHÈRE
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part2" style="--accent-color: #34d399">
+    <div class="matiere-header">
+      <div class="matiere-num">02</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Hydrosphère</h2>
+        <p>Océanographie &amp; Hydrologie</p>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 1 — Relief sous-marin & Définitions océanographiques</span>
+        <span class="sujet-meta">1h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 1h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Schématisez et donnez les caractéristiques qui définissent les grands ensembles du relief sous-marin : plateau continental, talus continental, plaine abyssale, dorsale océanique, fosses océaniques. Précisez pour chacun : profondeur, pente, processus de formation.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Bathyscaphe</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Rift océanique</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Vagues (caractéristiques et types)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Courants marins (types et causes)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Schématisez une zone de subduction et les formes qu'elle engendre</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 2 — Mers, océans & Convergence des plaques</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez ou répondez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Différence entre mer et océan</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Bathyscaphe (définition et utilisation)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Éléments constitutifs des cuvettes océaniques</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Mouvements eustatiques (définition et causes)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Régulateur thermique (rôle de l'océan)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Expliquez les mouvements de convergence des plaques :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Appellations (subduction, collision)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Manifestations (sismicité, volcanisme, arc insulaire)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Conséquences avec schémas</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 3 — Cycle de l'eau & Divergence des plaques</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez ou répondez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Cycle de l'eau (schéma et explication)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Méthode acoustique (exploration des fonds marins)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Éléments constitutifs des marges continentales</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Courants marins (circulation thermohaline et vent)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Capacité calorifique des eaux marines</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Expliquez les mouvements de divergence des plaques :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Appellations (rift, dorsale)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Manifestations (volcanisme, création de croûte)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Conséquences avec schémas</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 4 — Tsunamis, eustatisme & Dorsales océaniques</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Méthode acoustique</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Tsunami (causes et propagation)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Mouvements eustatiques</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Régulateur thermique</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Schématisez une zone des Dorsales et les formes qu'elle engendre</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Importance et originalité des dorsales océaniques dans la tectonique des plaques.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 5 — Exploration des fonds marins & Relief sous-marin</span>
+        <span class="sujet-meta">1h30 · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 1h30 · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Ces dernières décennies, la connaissance des fonds marins a fait des progrès remarquables. Quels sont les différents moyens d'exploration utilisés par les chercheurs (bathyscaphes, sonars, satellites, robots sous-marins) ?</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Schématisez les différents éléments du relief sous-marin avec légendes détaillées.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 6 — Sujet combiné : Lithosphère, Hydrosphère, Environnement</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="instruction-block">TOUTES LES QUESTIONS SONT OBLIGATOIRES</div>
+        <div class="question-block">
+          <div class="question-title">Lithosphère <span class="note-badge">⭐ /8</span></div>
+          <div class="question-content">Plan détaillé d'un commentaire de profil complet en relief continental.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Définitions <span class="note-badge">⭐ /4</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Roche métamorphique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Lithologie</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Hydrosphère <span class="note-badge">⭐ /4</span></div>
+          <div class="question-content">Expliquez le cycle de l'eau</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Caractéristiques des marges continentales <span class="note-badge">⭐ /4</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 7 — Mers, Cuvettes océaniques & Convergence</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Différence entre mer et océan (limites, superficie, profondeur)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Bathyscaphe (Trieste, Archimède)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Éléments constitutifs des cuvettes océaniques</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Mouvements eustatiques (glacio-eustatisme, tectono-eustatisme)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Régulateur thermique (climat mondial)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Les mouvements de convergence des plaques : appellations, manifestations, conséquences avec schémas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 8 — Dorsales océaniques & Tsunamis</span>
+        <span class="sujet-meta">1h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 1h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Importance et originalité des dorsales océaniques : rôle dans la tectonique des plaques, création de croûte océanique, anomalies magnétiques.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Méthode acoustique (échosondage)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Tsunami (genèse, propagation, impact)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Mouvements eustatiques</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Régulateur thermique</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Schématisez une zone des Dorsales</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 9 — Marges continentales & Divergence des plaques</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Cycle de l'eau (schéma détaillé)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Méthode acoustique</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Éléments constitutifs des marges continentales (plateau, talus, plaine)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Courants marins</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Capacité calorifique</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Mouvements de divergence des plaques : décrivez le rift continental, l'ouverture océanique, avec schémas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 10 — Subductions & Bathyscaphes, Rifts, Vagues</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Première Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Expliquez les mouvements de convergence des plaques en détaillant :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Subduction océan/océan (arc insulaire, fosse)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Subduction océan/continent (cordillère, volcanisme)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Collision continent/continent (chaîne de montagnes)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Deuxième Question <span class="note-badge">⭐ /10</span></div>
+          <div class="question-content">Définissez et schématisez :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Bathyscaphe</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Rift</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Vagues (hauteur, longueur, période)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Courants marins (surface et profondeur)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Zone de subduction (schéma complet)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet Hydrosphère (2019-2020) <span class="note-badge">L1</span></div>
+          <div class="question-content">Deux questions obligatoires :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Ces dernières décennies, la connaissance des fonds marins et de leur origine a fait des progrès remarquables. Quels sont les différents moyens d'exploration utilisés par les chercheurs pour étudier ces immensités ?</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Schématiser les différents éléments du relief sous-marin.</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet Hydrosphère — Session Normale 2015-2016</div>
+          <div class="question-content">Première question : Schématisez et donnez les caractéristiques qui définissent les grands ensembles du relief sous-marin. — Deuxième question : Définissez les mots suivants :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Bathyscaphe</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Rift</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Vagues</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Courants marins</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Schématisez une zone de subduction et les formes qu'elle engendre.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PARTIE 3 : ATMOSPHÈRE
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part3" style="--accent-color: #f472b6">
+    <div class="matiere-header">
+      <div class="matiere-num">03</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Atmosphère</h2>
+        <p>Climatologie &amp; Météorologie</p>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 1 — Ozone, Cellule de Ferrel & Thermodynamique</span>
+        <span class="sujet-meta">2h · 12 oct. 2018</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — 12 octobre 2018</div>
+        <div class="instruction-block">DEUX SUJETS OBLIGATOIRES</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Ozone (couche d'ozone, trou d'ozone)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Capacité hygrométrique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Centre d'action (anticyclones, dépressions)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cellule de Ferrel</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Mousson (mécanisme, zones concernées)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Étude thermodynamique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air P : pression = 900 hPa, température = 23°C, vapeur d'eau = 10 g/kg d'air sec. Air humide non saturé.</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Calculez l'humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Cherchez la capacité hygrométrique maximale de P</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Quelle est la température potentielle de P ?</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Quelle est la température potentielle pseudoadiabatique du thermomètre mouillé ?</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Quelle est la température du point de rosée ?</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Quelles sont les températures réelles de P à 800 hPa et à 700 hPa ?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 2 — Ondes EM, Gaz à effet de serre & Thermodynamique complète</span>
+        <span class="sujet-meta">2h · 2018-2019 · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1 · Année 2018-2019</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Onde électromagnétique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz à effet de serre</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chaleur latente</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Front (météorologique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Zone de convergence intertropicale (ZCIT)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Étude thermodynamique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air A : pression = 900 hPa, température réelle = 21°C, vapeur d'eau = 10 g/kg d'air sec. Air humide non saturé.</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Quelle est la capacité hygrométrique maximale de cette particule d'air ?</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Calculez son humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Quelle est sa température potentielle ?</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Trouvez son point de condensation (pression, température, altitude)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Quelle est la température potentielle pseudoadiabatique du thermomètre mouillé ?</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Quelle est la température pseudoadiabatique du thermomètre mouillé ?</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Trouvez la température du point de rosée</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Quelle est la température réelle de A à 800 hPa et à 700 hPa ?</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Pourquoi en haute altitude, les adiabatiques sèches et saturées sont-elles asymptotes ?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 3 — Coriolis, Cyclone & Carte synoptique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Force de Coriolis</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cyclone (structure, formation)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Vent dominant (alizés, contre-alizés)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Lumière visible (spectre solaire)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Effet de foehn</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Commentaire de carte synoptique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Analysez la carte synoptique fournie montrant une situation d'alizé humide (25 août 1965 à 06h TU). Identifiez : les centres d'action, les fronts, les systèmes dépressionnaires, et prévoyez l'évolution météorologique.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag pratique">Exercice L1</span>
+        <span class="sujet-title">Sujet 4 — Stabilité des masses d'air & Condensation</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1) Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Vapeur d'eau (humidité atmosphérique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cellule de Ferrel</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Vent géostrophique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz à effet de serre</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Isobare</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2) Expliquez <span class="note-badge">⭐ 5 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Masse d'air instable (caractéristiques, conséquences)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Masse d'air stable (caractéristiques, conséquences)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3) Conditions de condensation <span class="note-badge">⭐ 5 pts</span></div>
+          <div class="question-content">Quels sont les étapes ou conditions pour qu'une masse d'air se condense ?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 5 — CO₂, Hadley, ZCIT & Thermodynamique (13 juil. 2021)</span>
+        <span class="sujet-meta">2h · Coeff. 1 · 2021</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · 13 juillet 2021 · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz carbonique (CO₂)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz à effet de serre</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chaleur latente</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cellule de Hadley</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Zone de convergence intertropicale</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Étude thermodynamique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air A : pression = 900 hPa, température = 21°C, vapeur d'eau = 10 g/kg d'air sec. Air humide non saturé.</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Quelle est la capacité hygrométrique maximale de c' ?</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Calculez son humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Quelle est sa température potentielle ? (30°C)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Trouvez son point de condensation (pression, température, altitude)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Quelle est la température potentielle pseudoadiabatique du thermomètre mouillé ?</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Quelle est la température pseudoadiabatique du thermomètre mouillé ?</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Trouvez la température du point de rosée</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Quelle est la température réelle de A à 850 hPa et à 750 hPa ?</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Pourquoi en haute altitude, les adiabatiques sèches et saturées sont-elles asymptotes ?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 6 — Ozone, Cellules atmosphériques & Problème thermodynamique</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Ozone stratosphérique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Capacité hygrométrique maximale</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Centre d'action (dépression, anticyclone)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cellule atmosphérique (Hadley, Ferrel, Polaire)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Mousson (été, hiver)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Problème thermodynamique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air : P = 900 hPa, T = 23°C, r = 10 g/kg</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Capacité hygrométrique maximale</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Température potentielle</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Point de condensation</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Température pseudoadiabatique</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Températures réelles à 800 hPa et 700 hPa</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag pratique">Exercice Pratique</span>
+        <span class="sujet-title">Sujet 7 — Utilisation de l'émagramme (Particule M)</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Utilisation de l'émagramme</div>
+          <div class="question-content">Particule d'air M : pression = 930 hPa, température = 16°C, vapeur d'eau = 5 g/kg. Trouvez graphiquement sur l'émagramme :</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Rw = capacité hygrométrique</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">U = humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">θw = température potentielle</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Le point de condensation de la particule d'air</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">La température de condensation</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">θ'w = température potentielle pseudoadiabatique du thermomètre mouillé</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Tw = température du thermomètre mouillé</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Td = température du point de rosée</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">La température réelle si on soulève d'une manière adiabatique la particule jusqu'au niveau de 650 hPa</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 8 — Front polaire, ZCIT & Thermodynamique avancée</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Onde électromagnétique (spectre solaire)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz à effet de serre (mécanisme)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chaleur latente (vaporisation, condensation)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Front polaire</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Zone de convergence intertropicale (saisonnement)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Thermodynamique atmosphérique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air : P = 900 hPa, T = 23°C, r = 10 g/kg</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Capacité hygrométrique maximale</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Humidité relative</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Température potentielle</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Point de condensation (P, T, Z)</span></div>
+          <div class="sub-item"><span class="sub-num">5.</span><span class="sub-text">Température potentielle pseudoadiabatique</span></div>
+          <div class="sub-item"><span class="sub-num">6.</span><span class="sub-text">Température pseudoadiabatique</span></div>
+          <div class="sub-item"><span class="sub-num">7.</span><span class="sub-text">Température du point de rosée</span></div>
+          <div class="sub-item"><span class="sub-num">8.</span><span class="sub-text">Températures réelles à 800 hPa et 700 hPa</span></div>
+          <div class="sub-item"><span class="sub-num">9.</span><span class="sub-text">Asymptotisme des adiabatiques en haute altitude</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Sujet 9 — Coriolis, Cyclone tropical & Analyse synoptique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Force de Coriolis (déviation, hémisphères)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cyclone tropical (structure, œil, mur)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Vent dominant (trade winds, westerlies)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Lumière visible (photosynthèse)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Effet de foehn (chinois)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Analyse synoptique <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Carte synoptique : Alizé humide. Analysez les isobares, les systèmes dépressionnaires, les fronts, et établissez les prévisions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 10 — CO₂, Cellule de Hadley & Problème complet émagramme</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h · Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">I — Définitions <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz carbonique (cycle, sources, puits)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Gaz à effet de serre (effet de serre naturel vs anthropique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chaleur latente (importance climatique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cellule de Hadley (mécanisme, limite)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Zone de convergence intertropicale (déplacement saisonnier)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">II — Problème complet <span class="note-badge">⭐ 10 pts</span></div>
+          <div class="question-content">Particule d'air : P = 900 hPa, T = 21°C, r = 10 g/kg. Calculs complets sur l'émagramme : capacité hygrométrique, humidité relative, températures potentielles, point de condensation, évolution avec l'altitude.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PARTIE 4 : ENVIRONNEMENT
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part4" style="--accent-color: #fbbf24">
+    <div class="matiere-header">
+      <div class="matiere-num">04</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Environnement</h2>
+        <p>Écologie &amp; Sciences de l'Environnement</p>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 1 — Compétition, Chaîne alimentaire & Plantes et lumière (2019-2020)</span>
+        <span class="sujet-meta">2h · 2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2019-2020</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Compétition (intraspecifique, interspecifique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Amplitude écologique (niche fondamentale vs réalisée)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Humus (formation, types)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Minéralisation (décomposition)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Chaîne alimentaire <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Expliquer le principe de base de la chaîne alimentaire : Producteurs, consommateurs, décomposeurs, flux d'énergie, rendement écologique.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Types de plantes selon la lumière <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Définir les types de plantes selon leur besoin en lumière : Heliophytes, sciaphytes, plantes de demi-ombre, stratégies d'adaptation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 2 — Biotope, Biocénose & Formation du sol (2018-2019)</span>
+        <span class="sujet-meta">2h · 2018-2019</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2018-2019</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Biotope (facteurs abiotiques)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Biocénose (communauté vivante)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteur écologique (limitant, favorable)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Amplitude écologique (tolérance)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Processus de formation du sol <span class="note-badge">⭐ 12 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Altération de la roche mère (physique, chimique, biologique)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Activités biologiques et apports de matières organiques</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Mécanisme de mise en place des horizons (A, B, C)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les types de sols (podzol, chernozem, latérite)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 3 — Compétition, Chaîne trophique & Lumière</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Compétition</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Amplitude écologique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Humus</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Minéralisation</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Chaîne alimentaire <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Principe de base, niveaux trophiques, pyramides écologiques.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Types de plantes selon la lumière <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Classification, adaptations morphologiques, distribution.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 4 — Initiation aux Sciences de l'Environnement (2019-2020)</span>
+        <span class="sujet-meta">2h · 2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Initiation aux Sciences de l'Environnement</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Compétition (exploitative, interférence)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Amplitude écologique (spécialistes vs généralistes)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Humus (mull, moder, mor)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Minéralisation (nitrification, ammonification)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Chaîne alimentaire <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Flux d'énergie, rendement de 10%, biomagnification.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Plantes et lumière <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Stratégies R, S, C (sensu Grime), adaptation au milieu.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 5 — Écologie fondamentale, Populations & Cycles biogéochimiques</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Écologie fondamentale <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Définissez : biotope, biocénose, écosystème, biosphère.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Dynamique des populations <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Courbes de croissance, facteurs de limitation, capacité de charge.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Cycles biogéochimiques <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Cycle du carbone, de l'azote, du phosphore, perturbations anthropiques.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 6 — Niche écologique, Succession & Biodiversité</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Niche écologique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Biomasse</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Productivité primaire</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Pyramide écologique</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Succession écologique <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Succession primaire, secondaire, climax, perturbations.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Biodiversité <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Diversité alpha, beta, gamma, menaces, conservation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 7 — Réseaux trophiques, Pollution & Changement climatique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Écosystème</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Habitat</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Niche écologique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Réseau trophique</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Pollution et environnement <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Types de pollution, bioindicateurs, traitement des eaux usées.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Changement climatique <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Causes, conséquences, stratégies d'atténuation et d'adaptation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 8 — Liebig, Shelford & Gestion des ressources</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteur abiotique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteur biotique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Limitation de Liebig</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Règle de Shelford</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Gestion des ressources naturelles <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Eau, sol, forêt, pêche, durabilité.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Impact humain sur l'environnement <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Déforestation, urbanisation, agriculture intensive, solutions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 9 — Développement durable & Milieux naturels de Madagascar</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Écologie</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Environnement</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Développement durable</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Empreinte écologique</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Milieux naturels de Madagascar <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Forêt tropicale humide, sèche, mangrove, savane, endémisme.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Conservation de la nature <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Aires protégées, corridors écologiques, restauration écologique.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 10 — Biomes, Écotones & Transition écologique</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Biosphère</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Biome</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Écotone</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Équilibre dynamique</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Problématiques environnementales globales <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Réchauffement climatique, perte de biodiversité, pollution plastique, surexploitation.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Transition écologique <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Énergies renouvelables, économie circulaire, agriculture bio, écomobilité.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet Environnement 2005-2006 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet Environnement — Tolérance des espèces & Températures (2005-2006)</span>
+        <span class="sujet-meta">3h · 4 août 2006</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — Département de Géographie — Niveau A — 1ère session — 4 Août 2006</div>
+        <div class="instruction-block">Un sujet obligatoire</div>
+        <div class="question-block">
+          <div class="question-title">Question 1</div>
+          <div class="question-content">Définissez et représentez schématiquement les limites de tolérances d'une espèce.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 2 — Définitions</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">L'amplitude écologique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Le facteur limitant</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Le facteur de production</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 3 — Influence de la température sur les plantes</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les types de plantes selon leurs besoins de chaleur</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Leurs températures optimales</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">L'action des températures extrêmes sur les plantes</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les différentes formes d'adaptation des plantes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PARTIE 5 : POPULATION, ESPACE ET SOCIÉTÉ
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part5" style="--accent-color: #a78bfa">
+    <div class="matiere-header">
+      <div class="matiere-num">05</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Population, Espace &amp; Société</h2>
+        <p>Géographie Humaine &amp; Urbanisation</p>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 1 — Population, Milieu Rural & Urbanisation mondiale</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h</div>
+        <div class="instruction-block">Tous les sujets à traiter</div>
+        <div class="question-block">
+          <div class="question-title">Population <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Dites en quelques phrases les principaux aspects actuels de la mortalité infantile à Madagascar. Précisez les causes (paludisme, malnutrition, accès aux soins) et les stratégies de réduction.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Milieu Rural <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Caractérisez le rendement, la productivité, la densité agricole et le niveau de vie des exploitants de culture sur brûlis de l'Afrique tropicale. Analysez les problèmes de durabilité.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Milieu Urbain <span class="note-badge">⭐ 12 pts</span></div>
+          <div class="question-content">Plus de la moitié de la population mondiale actuelle se trouve dans les villes. En tenant compte de ce constat :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Le rythme d'urbanisation est-il pareil pour toutes les régions du globe ? Justifiez votre réponse.</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Si non, quelles sont les conséquences sur le classement mondial des villes ?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 2 — Mégapoles & Évolution des villes millionnaires (2019-2020)</span>
+        <span class="sujet-meta">2h · 2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2019-2020</div>
+        <div class="question-block">
+          <div class="question-title">1) Définir une MÉGAPOLE <span class="note-badge">⭐ 2 pts</span></div>
+          <div class="question-content">Définition, critères (population > 10 millions, polarité économique), caractéristiques.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2) Exemples <span class="note-badge">⭐ 3 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une mégapole européenne (Londres, Paris, Rhin-Ruhr)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une asiatique (Tokyo, Shanghai, Mumbai)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une africaine (Le Caire, Lagos, Kinshasa)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3) Évolution des villes millionnaires depuis le XIXe siècle <span class="note-badge">⭐ 12 pts</span></div>
+          <div class="question-content">Révolution industrielle, colonisation, décolonisation, mondialisation, métropolisation.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">4) Qualité rédactionnelle <span class="note-badge">⭐ 3 pts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 3 — IFES : Intégration internationale & Économie de Madagascar</span>
+        <span class="sujet-meta">3h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h · Coefficient : 1 — Épreuve IFES (Initiation aux Faits Économiques et Sociaux)</div>
+        <div class="instruction-block">Un sujet à traiter sur les deux proposés</div>
+        <div class="question-block">
+          <div class="question-title">Sujet 1</div>
+          <div class="question-content">L'intégration internationale s'effectue à deux niveaux différents : intégration régionale et intégration mondiale. Il y a là une contradiction qui peut s'exprimer sous forme de question : comment des États intégrés régionalement peuvent-ils participer à la mondialisation ? Montrez que cette contradiction n'est qu'apparente.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet 2</div>
+          <div class="question-content">Comment appréciez-vous les aspects de l'activité économique à Madagascar ? Analysez les secteurs primaire, secondaire, tertiaire, les potentialités et les obstacles au développement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 4 — Transition démographique, Migrations & Urbanisation dans les PED</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — GÉOGRAPHIE DE LA POPULATION</div>
+        <div class="question-block">
+          <div class="question-title">1. Transition démographique <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Modèle de Thompson, phases, application au cas de Madagascar.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Migrations <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Typologie, causes, conséquences, politiques d'accueil.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Urbanisation dans les pays en développement <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Urbanisation rapide, bidonvilles, services urbains, stratégies d'aménagement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 5 — Géographie Rurale & Agriculture à Madagascar</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — GÉOGRAPHIE RURALE</div>
+        <div class="question-block">
+          <div class="question-title">1. Systèmes agricoles <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Intensification/extensification, révolution verte, agriculture biologique.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Exploitation agricole à Madagascar <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Riziculture, culture sur brûlis, exportations (vanille, clous de girofle).</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Problématique foncière <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Accaparement des terres, propriété coutumière, réformes agraires.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 6 — Géographie Urbaine & Aménagement</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — GÉOGRAPHIE URBAINE</div>
+        <div class="question-block">
+          <div class="question-title">1. Définitions <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Ville, cité, métropole, mégalopole, conurbation, couronne périurbaine.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Fonctions urbaines <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Fonctions politiques, économiques, culturelles, hiérarchie urbaine.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Aménagement urbain <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Planification, transports, environnement, smart cities, villes durables.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 7 — Géographie Économique & Développement durable</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — GÉOGRAPHIE ÉCONOMIQUE</div>
+        <div class="question-block">
+          <div class="question-title">1. Mondialisation <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Définition, acteurs, flux, inégalités Nord-Sud.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Développement durable <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Trois piliers (économique, social, environnemental), ODD, cas de Madagascar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet 10 — Géographie Politique & Géopolitique de l'océan Indien</span>
+        <span class="sujet-meta">3h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 3h — GÉOGRAPHIE POLITIQUE</div>
+        <div class="question-block">
+          <div class="question-title">1. Territoire et frontières <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Définitions, types de frontières, conflits territoriaux.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2. Géopolitique de l'océan Indien <span class="note-badge">⭐ 6 pts</span></div>
+          <div class="question-content">Enjeux stratégiques, puissances régionales, îles (Madagascar, La Réunion, Mayotte).</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. Gouvernance mondiale <span class="note-badge">⭐ 8 pts</span></div>
+          <div class="question-content">Nations Unies, accords internationaux, ONG, nouvelles formes de gouvernance.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujets Session Normale 2006-2007 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session 2006-2007</span>
+        <span class="sujet-title">Sujet Population-Espace-Société — Examen 2ème session (2006-2007)</span>
+        <span class="sujet-meta">3h · Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université de Madagascar — FLSH — Année U 2006-2007 — Durée : 3h — Coefficient : 2</div>
+        <div class="instruction-block">Tous les sujets à traiter</div>
+        <div class="question-block">
+          <div class="question-title">Sujet 1. Population <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Dites en quelques phrases, les principaux aspects actuels de la mortalité infantile à Madagascar.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet 2. Milieu Rural <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Caractérisez le rendement, la productivité, la densité agricole et le niveau de vie des espaces de culture sur brûlis de l'Afrique tropicale.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet 3. Milieu Urbain <span class="note-badge">⭐ 12 pts</span></div>
+          <div class="question-content">Plus de la moitié de la population mondiale actuelle se trouve dans les villes. En tenant compte de ce constat :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Le rythme d'urbanisation est-il pareil pour toutes les régions du globe ? Justifiez votre réponse.</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Si non, quelles sont les conséquences sur le classement mondial des villes ?</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Comment expliquez-vous ces différences ?</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Quels problèmes spatiaux, sociaux et économiques connaissent alors les capitales des pays du Sud ?</span></div>
+          <div class="question-content" style="margin-top:10px; font-style:italic">NB : Regroupez les réponses de manière à avoir un devoir structuré comportant une introduction, un développement et une conclusion.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet Géographie de la population 2018-2019 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale — 29 sept. 2020</span>
+        <span class="sujet-title">Sujet Géographie Pop./Milieu Urbain/Rural — Foyers de peuplement (2018-2019)</span>
+        <span class="sujet-meta">2h</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Année Universitaire 2018-2019 — Session normale — Mardi 29 septembre 2020 — Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Question 1 : Géographie de la population <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Citez les trois grands foyers de peuplement tout en mentionnant les principaux facteurs de concentration de population dans ces régions du globe.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 2 : Milieu Urbain <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Qu'entend-on par « villes monstres » ?</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 3 : Milieu Rural <span class="note-badge">⭐ 12 pts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet Aménagement de l'espace -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag pratique">Outils Géographiques</span>
+        <span class="sujet-title">Sujet IFES/Cartographie/Aménagement — Session Repêchage (2018-2019)</span>
+        <span class="sujet-meta">2h · 30 sept. 2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Année Universitaire 2018-2019 — UE Fondamentales obligatoires — Outils géographiques 1 — Session de repêchage — Mercredi 30 septembre 2020 — Durée : 2h</div>
+        <div class="instruction-block">Sujet obligatoire : toutes les questions sont à traiter en français</div>
+        <div class="question-block">
+          <div class="question-title">Question 1 : Initiation aux faits économiques et sociaux <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Définissez l'expression « Croissance économique »</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 2 : Cartographie 1 <span class="note-badge">⭐ 4 pts</span></div>
+          <div class="question-content">Pourquoi ne doit-on pas confondre une carte géographique avec un schéma géographique ?</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Question 3 : Aménagement de l'espace <span class="note-badge">⭐ 12 pts</span></div>
+          <div class="question-content">Les deux types d'espaces faiblement aménagés à Madagascar. Expliquez.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Espaces urbains 2019-2020 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet Espaces Urbains dans le Monde (2019-2020)</span>
+        <span class="sujet-meta">2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Année Universitaire 2019-2020 — Session normale</div>
+        <div class="question-block">
+          <div class="question-title">1) Définir une MÉGAPOLE <span class="note-badge">⭐ 2 pts</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2) Exemples <span class="note-badge">⭐ 3 pts</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une mégapole européenne</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une asiatique</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Une africaine</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3) Évolution des villes millionnaires depuis le XIXe siècle <span class="note-badge">⭐ 12 pts</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">4) Qualité rédactionnelle <span class="note-badge">⭐ 3 pts</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PARTIE 6 : GÉOGRAPHIE DE MADAGASCAR & INTRODUCTION
+  ========================================================== -->
+  <section class="matiere-section anchor-target" id="part6" style="--accent-color: #fb923c">
+    <div class="matiere-header">
+      <div class="matiere-num">06</div>
+      <div class="matiere-divider"></div>
+      <div class="matiere-info">
+        <h2>Géographie de Madagascar</h2>
+        <p>Malagasy · Introduction à la Géographie · Disciplines complémentaires</p>
+      </div>
+    </div>
+
+    <!-- Malagasy -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet Malagasy 1 — Lalanan'ny zava-boary sy kolontsaina (2017-2018)</span>
+        <span class="sujet-meta">2h · 2017/2018</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2017/2018</div>
+        <div class="instruction-block">Miainga amin'ny fahalalana azonao nandritra ny taom-pianarana sy ny fikarohana manokana natanao.</div>
+        <div class="question-block">
+          <div class="question-title">1' <span class="note-badge">⭐ Isa 8</span></div>
+          <div class="question-content">Omeo ny lalanan'ny zava-boary sy ny lalanan'ny kolontsaina araka ny ahitana azy avy, teo amin'ny Andriambahoaka atsimo, andrefana, atsinanana, avaratra ary Andriambahoaka afovoan'ny tany. Hamarino ny valin-teninao.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2' <span class="note-badge">⭐ Isa 8</span></div>
+          <div class="question-content">Manomeza faribolana 4 mampiseho ampahany amin'ny fizotry ny tantaran'Ibonia ary monomeza lohateny fanazavana momba azy avy tsirairay.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">3. <span class="note-badge">⭐ Isa 4</span></div>
+          <div class="question-content">Omeo ny hevitrao ny anarana hoe Iboniamasoiboniamanoro.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag rattrapage">Session Rattrapage</span>
+        <span class="sujet-title">Sujet Malagasy 2 — Angano, Fedra & Ibonia (2019-2020)</span>
+        <span class="sujet-meta">2h · 2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2019-2020</div>
+        <div class="instruction-block">Miainga amin'ny fahalalana azonao nandritra ny taom-pianarana sy ny fikarohana manokana natanao.</div>
+        <div class="question-block">
+          <div class="question-title">1"</div>
+          <div class="question-content">Ampitahao amin'ny antsoina hoe Angano ny antsoina hoe Fedra. (jandalana 15 raha betsaka indrindra)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2'</div>
+          <div class="question-content">Omeo ny faribolana anankiray ao amin'ny fedran'Ibonia, ka :</div>
+          <div class="sub-item"><span class="sub-num">a)</span><span class="sub-text">Tanisao ny singa mamorona ny faribodana</span></div>
+          <div class="sub-item"><span class="sub-num">b)</span><span class="sub-text">Omeo ny eva dindon'ny faribolana</span></div>
+          <div class="sub-item"><span class="sub-num">c)</span><span class="sub-text">Mbola mitoetra mandraka ankehitriny ve, araka ny hevitrao, ny kolontsaina voalaza ao amin'ny b ? Hamarino amin'ny alalan'ny ohatra ny valin-teninao.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Sujet Malagasy 3 — Angano, Fedra & Ibonia (2019)</span>
+        <span class="sujet-meta">2h · 2019</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Durée : 2h — Année 2019</div>
+        <div class="instruction-block">Miainga amin'ny fahalalana azonao nandritra ny taom-pianarana sy ny fikarohana manokana natanonao.</div>
+        <div class="question-block">
+          <div class="question-title">1"</div>
+          <div class="question-content">Ampitahao amin'ny antsoina hoe Angano ny antsoina hoe Fedra. (andalana 15 raha betsaka indrindra)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">2.</div>
+          <div class="question-content">Omeo ny faribolana anankiray ao amin'ny fedran'Ibonia, ka :</div>
+          <div class="sub-item"><span class="sub-num">a)</span><span class="sub-text">Tanisao ny singa mamorona ny faribodana</span></div>
+          <div class="sub-item"><span class="sub-num">b)</span><span class="sub-text">Omeo ny eva dindon'ny faribolana</span></div>
+          <div class="sub-item"><span class="sub-num">c)</span><span class="sub-text">Mbola mitoetra mandraka ankehitriny ve, araka ny hevitrao, ny kolontsaina voalaza ao arin'ny b ? Hamarino amin'ny alalan'ny ohatra ny valin teninao.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction à la Géographie -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Introduction à la Géographie — Hommes & Milieu naturel (2010-2011)</span>
+        <span class="sujet-meta">2h · 2010-2011 · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université de Madagascar — FLSH — Département de Géographie — Année U 2010-2011 — Examen REPÊCHAGE — 1ère Année, Niveau A — 1er Cycle — Durée : 2h — Coefficient : 1</div>
+        <div class="instruction-block">Un sujet obligatoire</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« Le problème des rapports entre les hommes et le milieu naturel constitue une des causes de l'évolution de la GÉOGRAPHIE ? » Expliquez !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Introduction à la Géographie — Histoire naturelle, physique, sociale (2009)</span>
+        <span class="sujet-meta">2009 · 1er Semestre</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Niveau A — 1er SEMESTRE 2009 : repêchage</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« La géographie a été une histoire naturelle, elle est devenue physique et humaine, elle tend à devenir sociale » Expliquer.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Introduction à la Géographie — Science ancienne et jeune (2006-2007)</span>
+        <span class="sujet-meta">2h · 2006-2007 · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université de Madagascar — FLSH — Département de Géographie — Année U 2006-2007 — Examen 2ème Session — 1ère Année, Niveau A — 1er Cycle — Durée : 2h — Coefficient : 1</div>
+        <div class="instruction-block">Un sujet obligatoire</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« On dit que la GÉOGRAPHIE est une science à la fois ancienne et jeune. En tenant compte de cette considération et à partir de vos connaissances personnelles, montrez que la géographie est toujours en quête de sa personnalité ? »</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag repechage">Session Repêchage</span>
+        <span class="sujet-title">Introduction à la Géographie — L'espace géographique fabrication humaine (2010)</span>
+        <span class="sujet-meta">27 juillet 2010</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ SESSION : Examen de repêchage — Niv. A — APF2 — Du 27 juillet 2010 (Premier semestre)</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« L'espace géographique est une fabrication humaine », expliquez ?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session Normale</span>
+        <span class="sujet-title">Introduction à la Géographie — Étude de l'espace (2009)</span>
+        <span class="sujet-meta">2009</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Niveau A — 1er SÉMESTRE 2009</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« La géographie est l'étude de l'espace, de son organisation et de son fonctionnement »</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aménagement de l'espace -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Aménagement de l'Espace</span>
+        <span class="sujet-title">Sujets Aménagement de l'Espace — Acteurs et Actions (1 à 5)</span>
+        <span class="sujet-meta">Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="question-block">
+          <div class="question-title">SUJET 1 — Acteurs de l'aménagement à Madagascar</div>
+          <div class="question-content">Analysez les différents acteurs de l'aménagement de l'espace à Madagascar en distinguant :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les acteurs institutionnels (État, collectivités territoriales) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les acteurs privés (entreprises, investisseurs) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les acteurs communautaires et associatifs (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les conflits et complémentarités entre ces différents acteurs (6 pts)</span></div>
+          <div class="question-content" style="margin-top:8px;font-style:italic">NB : Votre devoir comportera une introduction, un développement structuré et une conclusion.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 2 — Définitions & Questions de cours</div>
+          <div class="question-content">Définitions (8 pts) : Aménagement du territoire · Plan d'urbanisme directeur (PUD) · Schéma d'aménagement régional (SAR) · Zone d'aménagement concerté (ZAC) · Expropriation pour cause d'utilité publique · Droit de préemption · Servitude d'utilité publique · Concertation</div>
+          <div class="question-content" style="margin-top:8px">Questions (12 pts) : 1. Principales étapes d'une politique d'aménagement (4 pts) · 2. Instruments juridiques et financiers de l'aménagement à Madagascar (4 pts) · 3. Pourquoi la concertation entre acteurs est-elle essentielle ? (4 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 3 — Inégalités territoriales et aménagement</div>
+          <div class="question-content">« Les actions d'aménagement de l'espace visent à réduire les inégalités territoriales, mais elles peuvent aussi les accentuer. » Analysez :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les objectifs fondamentaux de l'aménagement du territoire (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les différents types d'actions d'aménagement (infrastructures, équipements, politiques sectorielles) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les effets pervers et les inégalités générées par certains aménagements (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les stratégies pour un aménagement plus équitable (4 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 4 — Décentralisation & Région Analamanga</div>
+          <div class="question-content">Définitions (10 pts) : Décentralisation · Déconcentration · CTD · Région · Commune · Fokontany · Transfert de compétences · DGD · SRAT · Contrat de plan</div>
+          <div class="question-content" style="margin-top:8px">Étude de cas (10 pts) — La région Analamanga concentre la majeure partie des investissements : 1. Facteurs expliquant cette concentration (4 pts) · 2. Conséquences pour les autres régions (3 pts) · 3. Actions pour réduire les déséquilibres (3 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 5 — Partenariats public-privé (PPP)</div>
+          <div class="question-content">Analysez le rôle des PPP dans l'aménagement de l'espace à Madagascar :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Domaines d'intervention (infrastructures, services urbains, zones économiques) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Avantages et limites du PPP (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Conditions de réussite dans un contexte de développement (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Exemples concrets à Madagascar (4 pts)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IFES : Inflation et Croissance -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">IFES</span>
+        <span class="sujet-title">Sujets IFES — Inflation & Croissance économique à Madagascar (1 à 5)</span>
+        <span class="sujet-meta">Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="question-block">
+          <div class="question-title">SUJET 1 — Définitions & Inflation à Madagascar</div>
+          <div class="question-content">Définitions (8 pts) : Inflation · Déflation · IPC · Pouvoir d'achat · Inflation galopante · Inflation structurelle · Politique monétaire restrictive</div>
+          <div class="question-content" style="margin-top:8px">Questions (12 pts) : 1. Principales causes de l'inflation à Madagascar (4 pts) · 2. Conséquences sur les ménages vulnérables (4 pts) · 3. Politiques de l'IDEAS pour lutter contre l'inflation (4 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 2 — Croissance économique depuis l'indépendance</div>
+          <div class="question-content">Analysez la croissance économique de Madagascar depuis 1960 :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les phases de croissance et de récession (1960-1990, transition, 2000-2020) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les secteurs moteurs de la croissance (agriculture, mines, services) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les facteurs structurels limitant la croissance (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Les perspectives et défis pour une croissance inclusive (4 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 3 — Inflation vs Croissance économique</div>
+          <div class="question-content">« L'inflation et la croissance économique sont deux indicateurs clés, mais parfois contradictoires. » Analysez :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Mesures de la croissance économique (PIB, PIB/habitant, croissance inclusive) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Relation inflation-croissance (courbe de Phillips, stagflation) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Le cas de Madagascar : croissance faible et inflation volatile (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Politiques pour concilier stabilité des prix et croissance (6 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 4 — Définitions & Problème économique (Madagascar 2019-2023)</div>
+          <div class="question-content">Définitions (10 pts) : PIB · Taux de croissance · Croissance extensive/intensive · IDH · Pauvreté monétaire · Seuil de pauvreté · Coefficient de Gini · Chômage structurel · Chômage conjoncturel · Économie informelle</div>
+          <div class="question-content" style="margin-top:8px">Problème économique (10 pts) — Données Madagascar 2019-2023 :</div>
+          <div class="question-content" style="font-family:monospace; font-size:0.8rem; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px; margin:6px 0">2019 : PIB = 45 000 Mds Ar | Inflation = 5,6% | Pop. = 26,9M<br>2020 : PIB = 44 000 Mds Ar | Inflation = 4,2% | Pop. = 27,7M<br>2021 : PIB = 48 000 Mds Ar | Inflation = 5,8% | Pop. = 28,5M<br>2022 : PIB = 52 000 Mds Ar | Inflation = 8,2% | Pop. = 29,3M<br>2023 : PIB = 56 000 Mds Ar | Inflation = 9,0% | Pop. = 30,1M</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Calculez le taux de croissance nominal du PIB pour chaque année (2 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Calculez le PIB par habitant pour 2019 et 2023 (2 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Analysez l'évolution conjointe de la croissance et de l'inflation (3 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Quelles sont les conséquences sociales de cette inflation élevée ? (3 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 5 — Chocs exogènes sur l'économie malgache</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chocs climatiques (sécheresses, cyclones) et inflation alimentaire (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chocs sanitaires (épidémies, COVID-19) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chocs internationaux (pétrole, crises financières) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Stratégies de résilience et d'adaptation (6 pts)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cartographie -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Cartographie</span>
+        <span class="sujet-title">Sujets Cartographie — Types et Sortes (1 à 5)</span>
+        <span class="sujet-meta">Coeff. 1-2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="question-block">
+          <div class="question-title">SUJET 1 — Définitions & Questions de cours</div>
+          <div class="question-content">Définitions (10 pts) : Carte topographique · Carte thématique · Carte choroplèthe · Carte à symboles proportionnels · Isohypses · Carte de Voronoi · Carte mentale · Carte scolaire · Carte touristique · Atlas</div>
+          <div class="question-content" style="margin-top:8px">Questions (10 pts) : 1. Différences entre carte topographique et thématique (4 pts) · 2. Modes de représentation des données quantitatives (3 pts) · 3. Éléments indispensables d'une carte géographique (3 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 2 — Types de cartes en géographie</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartes de référence (topographiques, administratives) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartes thématiques (choroplèthes, anamorphoses, cartogrammes) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartes mentales et représentations subjectives (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Nouvelles formes de cartographie (SIG, cartographie participative) (5 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 3 — La carte : outil scientifique et communication</div>
+          <div class="question-content">« La carte est à la fois un outil scientifique et un mode de communication. » Analysez :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Caractéristiques d'une carte scientifique (précision, généralisation, symbolisation) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Règles de sémiologie graphique (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Fonctions de communication de la carte (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Distorsions et biais possibles (5 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 4 — Projections & SIG</div>
+          <div class="question-content">Définitions (8 pts) : Projection cartographique · Échelle · Généralisation · Symbolisation · Légende · Quadrillage géographique · SIG · Télédétection</div>
+          <div class="question-content" style="margin-top:8px">Questions pratiques (12 pts) : 1. Types de projections et déformations (coniques, cylindriques, azimutales) (4 pts) · 2. Échelle numérique vs graphique (3 pts) · 3. Nécessité de la généralisation (3 pts) · 4. Avantages des SIG (2 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 5 — Évolution analogique vers le numérique</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartes analogiques traditionnelles (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Révolution numérique et SIG (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartographie sur Internet (Google Maps, OpenStreetMap) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Cartographie participative et collaborative (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Enjeux actuels (données ouvertes, géo-localisation, vie privée) (4 pts)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Histoire de l'économie -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Histoire de l'Économie</span>
+        <span class="sujet-title">Sujets Histoire de l'Économie — Trente Glorieuses à la Mondialisation (1 à 5)</span>
+        <span class="sujet-meta">Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="question-block">
+          <div class="question-title">SUJET 1 — Les Trente Glorieuses (1945-1975)</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteurs de la croissance exceptionnelle (reconstruction, baby-boom, technologie, fordisme) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Modèle keynésien et État-providence (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Différences entre pays développés (Europe, États-Unis, Japon) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Fin des Trente Glorieuses et choc pétrolier de 1973 (6 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 2 — Mondialisation économique</div>
+          <div class="question-content">« La mondialisation économique représente une nouvelle étape dans l'histoire des échanges internationaux. » Analysez :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Phases historiques de l'internationalisation (XVIe-XVIIIe, XIXe, XXe) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Caractéristiques de la mondialisation contemporaine (depuis 1980) (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Acteurs de la mondialisation (multinationales, organisations internationales, États) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Critiques et alternatives à la mondialisation néolibérale (4 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 3 — Définitions & Questions de cours</div>
+          <div class="question-content">Définitions (10 pts) : Révolution industrielle · Capitalisme industriel · Colonialisme économique · DIT · Fordisme · Taylorisme · Keynésianisme · Néolibéralisme · Accords de Bretton Woods · OMC</div>
+          <div class="question-content" style="margin-top:8px">Questions (10 pts) : 1. Les deux grandes périodes de la Révolution industrielle (4 pts) · 2. Comment le colonialisme a structuré l'économie mondiale 1880-1960 (3 pts) · 3. Fordisme vs Toyotisme (3 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 4 — Évolution des économies par grandes périodes historiques</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Antiquité : économies agricoles et premiers échanges (3 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Moyen Âge : féodalisme et renaissance du commerce (3 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Temps modernes : mercantilisme et colonisation (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">XIXe siècle : industrialisation et première mondialisation (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">XXe siècle : guerres mondiales, crise 1929, planification et libéralisme (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">XXIe siècle : économie numérique et nouveaux défis (5 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 5 — Crises économiques majeures</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Crise de 1929 : causes, déroulement, New Deal (6 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Chocs pétroliers des années 1970 (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Crise de 2008 (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Crise COVID-19 (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Leçons historiques et réponses politiques aux crises (2 pts)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Population : Répartition inégale -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Géographie de la Population</span>
+        <span class="sujet-title">Sujets Population — Répartition Inégale, Foyers & Déserts Humains (1 à 5)</span>
+        <span class="sujet-meta">Coeff. 2</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="question-block">
+          <div class="question-title">SUJET 1 — Définitions & Questions de cours</div>
+          <div class="question-content">Définitions (8 pts) : Foyer de peuplement · Désert humain · Densité de population · Densité relative · Densité agricole · Potentiel de peuplement · Surpopulation · Sous-population</div>
+          <div class="question-content" style="margin-top:8px">Questions (12 pts) : 1. Les trois grands foyers de peuplement (Asie orientale, Asie du Sud, Europe) (6 pts) · 2. Causes des déserts humains (3 pts) · 3. Répartition inégale de la population à l'échelle mondiale (3 pts)</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 2 — Facteurs de la répartition inégale</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteurs physiques et environnementaux (climat, relief, hydrographie) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteurs historiques et politiques (colonisme, conflits) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteurs économiques (attractivité des pôles de développement) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Conséquences spatiales : mégalopoles et désertification humaine (5 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 3 — Cas de Madagascar</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Répartition de la population (concentration sur les Hautes Terres) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Facteurs historiques de cette répartition (colonisation, migrations) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Déserts humains malgaches (zones sèches du Sud, forêts de l'Est) (5 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Politiques d'aménagement pour rééquilibrer la répartition (5 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 4 — Définitions & Problème de démographie</div>
+          <div class="question-content">Définitions (10 pts) : Mégapole · Mégalopole · Conurbation · Urbanisation · Exode rural · Migration · Solde migratoire · Transition démographique · Pyramide des âges · Taux d'accroissement naturel</div>
+          <div class="question-content" style="margin-top:8px">Problème de démographie (10 pts) — Répartition de la population mondiale par régions (2020) :</div>
+          <div class="question-content" style="font-family:monospace; font-size:0.8rem; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px; margin:6px 0">Asie : 4 600M hab. / 44 M km²<br>Afrique : 1 300M hab. / 30 M km²<br>Europe : 750M hab. / 10 M km²<br>Amérique latine : 650M hab. / 20 M km²<br>Amérique du Nord : 370M hab. / 24 M km²<br>Océanie : 43M hab. / 8 M km²</div>
+          <div class="sub-item"><span class="sub-num">1.</span><span class="sub-text">Calculez la densité moyenne pour chaque région (3 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">2.</span><span class="sub-text">Identifiez la région la plus densément peuplée et la moins (2 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">3.</span><span class="sub-text">Expliquez les écarts de densité entre l'Asie et l'Afrique (3 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">4.</span><span class="sub-text">Pourquoi l'Europe a-t-elle une densité élevée malgré sa superficie réduite ? (2 pts)</span></div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">SUJET 5 — Les déserts humains</div>
+          <div class="question-content">« Les déserts humains ne sont pas seulement des espaces vides, mais souvent le résultat de processus historiques et politiques. » Analysez :</div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Types de déserts humains (climatiques, démographiques, économiques) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Déserts climatiques (Sahara, Arctique, zones arides) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Déserts d'origine politique (déportations, guerres, exclusion) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Déserts économiques (ruralité abandonnée, friches industrielles) (4 pts)</span></div>
+          <div class="sub-item"><span class="sub-num">—</span><span class="sub-text">Défis de la mise en valeur des espaces peu peuplés (4 pts)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Espace-Aménagement 2006-2007 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Session 2006-2007</span>
+        <span class="sujet-title">Sujet Espace-Aménagement — IFES (2006-2007)</span>
+        <span class="sujet-meta">3h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université de Madagascar — FLSH — Département de Géographie — Année U 2006-2007 — Examen 2ème Session — Durée : 3h — Coeff. 1</div>
+        <div class="instruction-block">Un sujet à traiter sur les deux proposés</div>
+        <div class="question-block">
+          <div class="question-title">Sujet 1</div>
+          <div class="question-content">L'intégration internationale s'effectue à deux niveaux différents : intégration régionale et intégration mondiale. Il y a là une contradiction qui peut s'exprimer sous forme de question : comment des États intégrés régionalement peuvent-ils participer à la mondialisation ? Montrez que cette contradiction n'est qu'apparente.</div>
+        </div>
+        <div class="question-block">
+          <div class="question-title">Sujet 2</div>
+          <div class="question-content">Comment appréciez-vous les aspects de l'activité économique à Madagascar ?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Géographie L1 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag normale">Introduction à la Géographie</span>
+        <span class="sujet-title">Sujet Intro. Géographie — Science ancienne et jeune (2006-2007)</span>
+        <span class="sujet-meta">2h · Coeff. 1</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université de Madagascar — FLSH — Année U 2006-2007 — Examen 2ème Session — 1ère Année, Niveau A — Durée : 2h — Coefficient : 1</div>
+        <div class="question-block">
+          <div class="question-title">Sujet unique</div>
+          <div class="question-content">« On dit que la GÉOGRAPHIE est une science à la fois ancienne et jeune. En tenant compte de cette considération et à partir de vos connaissances personnelles, montrez que la géographie est toujours en quête de sa personnalité ? »</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sujet Malagasy 2019-2020 -->
+    <div class="sujet-card">
+      <div class="sujet-card-header" onclick="toggle(this)">
+        <span class="sujet-tag rattrapage">Session Rattrapage</span>
+        <span class="sujet-title">Sujet Malagasy — Grammaire et littérature malgache (2019-2020)</span>
+        <span class="sujet-meta">2h · 2019-2020</span>
+        <span class="expand-icon">▼</span>
+      </div>
+      <div class="sujet-body">
+        <div class="duree-info">⏱ Université d'Antananarivo — Faculté des Lettres et Sciences Humaines — Mention Géographie — Licence 1 — Année Universitaire 2019-2020 — Session de rattrapage — Durée : 2h</div>
+        <div class="question-block">
+          <div class="question-title">Sujet</div>
+          <div class="question-content">Sujet en langue malgache — Questions sur la grammaire et la littérature malgache</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       INDEX & CODES DE VALIDATION
+  ========================================================== -->
+  <section class="index-section anchor-target" id="index">
+    <h2 class="index-title">🔐 Index de Validation</h2>
+    <p class="index-subtitle">Codes de validation à 6 chiffres — Contacts autorisés</p>
+
+    <div class="codes-grid">
+      <div class="code-card">
+        <div class="code-label">Contact 1</div>
+        <div class="code-contact">📞 0346727460</div>
+        <div class="code-display" onclick="copyCode('034672')" title="Cliquez pour copier">034672</div>
+        <div class="copy-hint">Cliquez sur le code pour copier</div>
+      </div>
+
+      <div class="code-card">
+        <div class="code-label">Contact 2</div>
+        <div class="code-contact">📞 0332537927</div>
+        <div class="code-display" onclick="copyCode('033253')" title="Cliquez pour copier">033253</div>
+        <div class="copy-hint">Cliquez sur le code pour copier</div>
+      </div>
+    </div>
+
+    <div class="codes-list-title">📋 Liste complète des codes de validation</div>
+    <div class="codes-summary">
+      <span class="code-pill" onclick="copyCode('034672')">034672</span>
+      <span class="code-pill" onclick="copyCode('033253')">033253</span>
+    </div>
+
+    <div style="margin-top:30px; padding:20px; background:rgba(255,215,0,0.05); border:1px solid rgba(255,215,0,0.15); border-radius:12px;">
+      <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.7; text-align:center;">
+        ℹ️ Pour valider votre accès au document ou confirmer votre identité,<br>
+        communiquez le code à 6 chiffres correspondant à votre numéro de contact lors de votre appel.<br>
+        <strong style="color:var(--gold)">Contact 1 :</strong> 0346727460 → Code : <strong style="color:var(--gold)">034672</strong> &nbsp;|&nbsp;
+        <strong style="color:var(--gold)">Contact 2 :</strong> 0332537927 → Code : <strong style="color:var(--gold)">033253</strong>
+      </p>
+    </div>
+  </section>
+
+</div><!-- end .page-wrapper -->
+
+<div id="toast" class="copied-toast">✓ Code copié !</div>
+
+<script>
+  // Scroll progress
+  window.addEventListener('scroll', () => {
+    const p = document.getElementById('scrollProgress');
+    const s = document.documentElement;
+    const scrolled = (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100;
+    p.style.width = scrolled + '%';
+  });
+
+  // Toggle individual card
+  function toggle(header) {
+    const card = header.parentElement;
+    card.classList.toggle('open');
+  }
+
+  // Toggle all
+  let allOpen = false;
+  function toggleAll() {
+    allOpen = !allOpen;
+    document.querySelectorAll('.sujet-card').forEach(c => {
+      if (allOpen) c.classList.add('open');
+      else c.classList.remove('open');
+    });
+  }
+
+  // Copy code
+  function copyCode(code) {
+    navigator.clipboard.writeText(code).then(() => {
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    });
+  }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Staggered entrance animation for cards
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = `fadeDown 0.5s ${i * 0.05}s ease both`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.sujet-card').forEach(card => observer.observe(card));
+</script>
+</body>
+</html>
